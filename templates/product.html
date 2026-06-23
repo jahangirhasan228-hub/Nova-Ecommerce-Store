@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>{{product.name}} - Nova</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="navbar">
+
+<div class="logo">
+🌸 Nova
+</div>
+
+
+<div>
+
+<a href="/">Home</a>
+
+<a href="/cart/">Cart 🛒</a>
+
+</div>
+
+</div>
+
+
+
+<div style="text-align:center; margin-top:40px;">
+
+
+<div class="card" style="margin:auto; width:350px;">
+
+
+<img src="{{product.image.url}}">
+
+
+<h1>{{product.name}}</h1>
+
+
+<h2>
+₹{{product.price}}
+</h2>
+
+
+<p>
+{{product.description}}
+</p>
+
+
+
+<a class="btn" href="/add/{{product.id}}">
+Add To Cart 🛒
+</a>
+
+
+
+</div>
+
+
+</div>
+
+
+</body>
+
+</html>

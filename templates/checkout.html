@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Nova Checkout</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="navbar">
+
+<div class="logo">
+🌸 Nova
+</div>
+
+
+<div class="nav-links">
+
+<a href="/">Home</a>
+
+<a href="/cart/">Cart 🛒</a>
+<a href="/orders/">Orders 📦</a>
+
+{% if user.is_authenticated %}
+
+<a href="/logout/">Logout</a>
+
+{% endif %}
+
+</div>
+
+</div>
+
+
+
+<div class="checkout-page">
+
+
+<div class="checkout-card">
+
+
+<h1>
+Shipping Information 🌸
+</h1>
+
+
+<p>
+Complete your details for delivery
+</p>
+
+
+
+<form method="POST">
+
+{% csrf_token %}
+
+
+
+<div class="form-grid">
+
+
+<div>
+
+<label>
+Full Name
+</label>
+
+<input type="text" 
+name="name"
+placeholder="Enter your name"
+required>
+
+</div>
+
+
+
+<div>
+
+<label>
+Phone Number
+</label>
+
+<input type="text"
+name="phone"
+placeholder="Enter phone number"
+required>
+
+</div>
+
+
+
+<div>
+
+<label>
+City
+</label>
+
+<input type="text"
+name="city"
+placeholder="City"
+required>
+
+</div>
+
+
+
+<div>
+
+<label>
+Pincode
+</label>
+
+<input type="text"
+name="pincode"
+placeholder="Pincode"
+required>
+
+</div>
+
+
+</div>
+
+
+
+
+<label>
+Address
+</label>
+
+
+<textarea 
+name="address"
+placeholder="Full delivery address"
+required></textarea>
+
+
+
+
+<button class="place-btn">
+
+Place Order ✨
+
+</button>
+
+
+
+</form>
+
+
+</div>
+
+
+</div>
+
+
+</body>
+
+</html>

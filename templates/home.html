@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Nova Store</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- Navbar -->
+
+<div class="navbar">
+
+    <div class="logo">
+        🌸 Nova
+    </div>
+
+
+    <div class="nav-links">
+
+        <a href="/">Home</a>
+
+        <a href="/cart/">Cart 🛒</a>
+        <a href="/orders/">Orders 📦</a>
+
+
+        {% if user.is_authenticated %}
+
+            <span>
+                Hi, {{user.username}} 🌸
+            </span>
+
+            <a href="/logout/">Logout</a>
+
+
+        {% else %}
+
+            <a href="/login/">Login</a>
+
+            <a href="/register/">Register</a>
+
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+
+
+<!-- Hero Section -->
+
+<div class="hero">
+
+
+<h1>
+Welcome to Nova 🌸
+</h1>
+
+
+<p>
+Discover beautiful products crafted for your everyday lifestyle ✨
+</p>
+
+
+<a href="#products" class="shop-btn">
+
+Shop Now
+
+</a>
+
+
+</div>
+
+
+
+
+
+<!-- Categories -->
+
+<h1>
+Explore Categories
+</h1>
+
+
+<div class="categories">
+
+
+<div class="category-card">
+🌸 Fashion
+</div>
+
+
+<div class="category-card">
+⌚ Accessories
+</div>
+
+
+<div class="category-card">
+🏠 Lifestyle
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- Products -->
+
+
+<h1 id="products">
+Featured Products ✨
+</h1>
+
+
+
+<div class="products">
+
+
+{% for p in products %}
+
+
+<div class="card">
+
+
+<img src="{{p.image.url}}">
+
+
+<h2>
+{{p.name}}
+</h2>
+
+
+<p>
+₹{{p.price}}
+</p>
+
+
+
+<a class="btn" href="/product/{{p.id}}/">
+
+View Product
+
+</a>
+
+
+</div>
+
+
+
+{% endfor %}
+
+
+</div>
+
+
+
+
+
+<footer>
+
+<h2>
+🌸 Nova
+</h2>
+
+<p>
+Beautiful products, peaceful shopping experience ✨
+</p>
+
+
+<p>
+© 2026 Nova Store | All Rights Reserved
+</p>
+
+
+</footer>
+
+
+
+</body>
+
+</html>

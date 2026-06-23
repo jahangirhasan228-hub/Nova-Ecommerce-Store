@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Nova Orders</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="navbar">
+
+<div class="logo">
+🌸 Nova
+</div>
+
+
+<div class="nav-links">
+
+<a href="/">
+Home
+</a>
+
+
+<a href="/cart/">
+Cart 🛒
+</a>
+
+
+<a href="/logout/">
+Logout
+</a>
+
+
+</div>
+
+</div>
+
+
+
+
+<h1>
+My Orders ✨
+</h1>
+
+
+
+<div class="orders-container">
+
+
+{% for order in orders %}
+
+
+<div class="order-card">
+
+
+<img src="{{order.product.image.url}}">
+
+
+
+<div>
+
+
+<h2>
+{{order.product.name}}
+</h2>
+
+
+<p>
+Price: ₹{{order.product.price}}
+</p>
+
+
+<p>
+Quantity: {{order.quantity}}
+</p>
+
+
+<p>
+Ordered on:
+{{order.ordered_date}}
+</p>
+
+
+<p class="status">
+Order Confirmed ✓
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+{% empty %}
+
+
+<h2>
+No orders yet 🌸
+</h2>
+
+
+{% endfor %}
+
+
+
+</div>
+
+
+</body>
+
+</html>
