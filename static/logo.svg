@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 52" width="200" height="52">
+  <rect x="0" y="0" width="200" height="52" rx="10" fill="#0F52BA"/>
+  <rect x="0" y="0" width="6" height="52" rx="3" fill="#D4AF37"/>
+  <circle cx="34" cy="26" r="18" fill="#0A3D8A"/>
+  <text x="34" y="31" font-family="Georgia, serif" font-size="16" font-weight="bold"
+        fill="#D4AF37" text-anchor="middle">KS</text>
+  <text x="58" y="22" font-family="'Segoe UI', Arial, sans-serif" font-size="16"
+        font-weight="700" fill="#D4AF37" letter-spacing="0.5">Kroy Shindhu</text>
+  <text x="58" y="37" font-family="'Segoe UI', Arial, sans-serif" font-size="9"
+        fill="rgba(255,255,255,0.75)" letter-spacing="1.5">SHOP MORE, LIVE BETTER</text>
+</svg>

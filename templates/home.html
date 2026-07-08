@@ -1,191 +1,82 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-
-<title>Nova Store</title>
-
-<link rel="stylesheet" href="/static/style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kroy Shindhu — Shop More, Live Better</title>
+    <meta name="description" content="Kroy Shindhu — Bangladesh's trusted online store. Shop More, Live Better.">
+    <meta property="og:title" content="Kroy Shindhu">
+    <meta property="og:description" content="Shop More, Live Better">
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
 </head>
-
-
 <body>
 
-
-<!-- Navbar -->
-
 <div class="navbar">
-
-    <div class="logo">
-        🌸 Nova
-    </div>
-
-
+    <a href="/" class="logo">
+        <img src="/static/logo.svg" alt="Kroy Shindhu">
+    </a>
     <div class="nav-links">
-
         <a href="/">Home</a>
-
         <a href="/cart/">Cart 🛒</a>
-        <a href="/orders/">Orders 📦</a>
-
-
+        <a href="/orders/">Orders</a>
         {% if user.is_authenticated %}
-
-            <span>
-                Hi, {{user.username}} 🌸
-            </span>
-
+            <span style="color:rgba(255,255,255,0.8);font-size:14px;">Hi, {{user.username}}</span>
             <a href="/logout/">Logout</a>
-
-
         {% else %}
-
             <a href="/login/">Login</a>
-
             <a href="/register/">Register</a>
-
-
         {% endif %}
-
     </div>
-
 </div>
-
-
-
-<!-- Hero Section -->
 
 <div class="hero">
-
-
-<h1>
-Welcome to Nova 🌸
-</h1>
-
-
-<p>
-Discover beautiful products crafted for your everyday lifestyle ✨
-</p>
-
-
-<a href="#products" class="shop-btn">
-
-Shop Now
-
-</a>
-
-
+    <h1>Welcome to Kroy Shindhu</h1>
+    <p>Shop More, Live Better — আপনার পছন্দের পণ্য এখন একটাই জায়গায়</p>
+    <a href="#products" class="shop-btn">Shop Now</a>
 </div>
 
-
-
-
-
-<!-- Categories -->
-
-<h1>
-Explore Categories
-</h1>
-
-
+<h1>Explore Categories</h1>
 <div class="categories">
-
-
-<div class="category-card">
-🌸 Fashion
+    <div class="category-card">Fashion</div>
+    <div class="category-card">Accessories</div>
+    <div class="category-card">Lifestyle</div>
+    <div class="category-card">Electronics</div>
 </div>
 
-
-<div class="category-card">
-⌚ Accessories
-</div>
-
-
-<div class="category-card">
-🏠 Lifestyle
-</div>
-
-
-</div>
-
-
-
-
-
-<!-- Products -->
-
-
-<h1 id="products">
-Featured Products ✨
-</h1>
-
-
-
+<h1 id="products">Featured Products</h1>
 <div class="products">
-
-
-{% for p in products %}
-
-
-<div class="card">
-
-
-<img src="{{p.image.url}}">
-
-
-<h2>
-{{p.name}}
-</h2>
-
-
-<p>
-₹{{p.price}}
-</p>
-
-
-
-<a class="btn" href="/product/{{p.id}}/">
-
-View Product
-
-</a>
-
-
+    {% for p in products %}
+    <div class="card">
+        <img src="{{p.image.url}}" alt="{{p.name}}">
+        <h2>{{p.name}}</h2>
+        <p>৳{{p.price}}</p>
+        <a class="btn" href="/product/{{p.id}}/">View Product</a>
+    </div>
+    {% endfor %}
 </div>
-
-
-
-{% endfor %}
-
-
-</div>
-
-
-
-
 
 <footer>
-
-<h2>
-🌸 Nova
-</h2>
-
-<p>
-Beautiful products, peaceful shopping experience ✨
-</p>
-
-
-<p>
-© 2026 Nova Store | All Rights Reserved
-</p>
-
-
+    <img src="/static/logo.svg" alt="Kroy Shindhu" style="height:38px;margin-bottom:12px;">
+    <p style="color:rgba(255,255,255,0.7);font-size:13px;">Shop More, Live Better</p>
+    <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/cart/">Cart</a>
+        <a href="/orders/">Orders</a>
+        <a href="/login/">Login</a>
+    </div>
+    {% if site_settings %}
+    <div class="social-links">
+        {% if site_settings.facebook_url %}<a href="{{site_settings.facebook_url}}" target="_blank">Facebook</a>{% endif %}
+        {% if site_settings.instagram_url %}<a href="{{site_settings.instagram_url}}" target="_blank">Instagram</a>{% endif %}
+        {% if site_settings.whatsapp_number %}<a href="https://wa.me/{{site_settings.whatsapp_number}}" target="_blank">WhatsApp</a>{% endif %}
+        {% if site_settings.youtube_url %}<a href="{{site_settings.youtube_url}}" target="_blank">YouTube</a>{% endif %}
+    </div>
+    {% endif %}
+    <p style="margin-top:20px;font-size:12px;color:rgba(255,255,255,0.5);">© 2026 Kroy Shindhu | All Rights Reserved</p>
 </footer>
 
 <script src="/static/script.js"></script>
-
 </body>
-
 </html>
