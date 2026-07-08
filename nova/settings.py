@@ -13,8 +13,6 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 from pathlib import Path
 
 import sys
-from pysqlite3 import dbapi2 as sqlite3
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
